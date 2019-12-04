@@ -1,0 +1,17 @@
+{
+  "name": "Stock-App",
+  "version": "1.0.0",
+  "description": "Prices of commodities",
+  "license": "MIT",
+  "repository": "spring-boot-electron/stockapp",
+  "main": "src/main/js/app.js",
+  "scripts": {
+    "start": "electron src/main/js/app.js"
+  },
+  "devDependencies": {
+    "electron": "^3.0.2"
+  },
+  "dependencies": {
+    "papaparse": "^4.6.0"
+  }
+}
