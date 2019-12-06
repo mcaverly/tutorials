@@ -21,6 +21,10 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
@@ -78,39 +82,11 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>npm link webpack</id>
-                        <goals>
-                            <goal>npm</goal>
-                        </goals>
-                        <configuration>
-                            <arguments>link webpack</arguments>
-                        </configuration>
-                    </execution>
-                    <execution>
                         <id>webpack build</id>
                         <goals>
                             <goal>webpack</goal>
                         </goals>
                     </execution>
-<!--                    <execution>
-                        <id>npm run build</id>
-                        <goals>
-                            <goal>npm</goal>
-                        </goals>
-                        <configuration>
-                            <arguments>run build</arguments>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>prod</id>
-                        <goals>
-                            <goal>npm</goal>
-                        </goals>
-                        <configuration>
-                            <arguments>run-script build</arguments>
-                        </configuration>
-                        <phase>generate-resources</phase>
-                    </execution>-->
                 </executions>
             </plugin>
         </plugins>

@@ -1,4 +1,4 @@
-package com.baeldung.stockapp;
+package com.baeldung.stockapp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
