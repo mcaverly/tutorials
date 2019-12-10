@@ -8,15 +8,48 @@
 
         <!--Stylesheets--> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="/styles.css"/>
+
+        <script>
+            // Get HTML head element 
+            var head = document.getElementsByTagName('HEAD')[0];
+
+            // Create new link Element 
+            var link = document.createElement('link');
+
+            // set the attributes for link element  
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+
+            // Load CSS based on deployment
+            var userAgent = navigator.userAgent.toLowerCase();
+            if (userAgent.indexOf(' electron/') > -1) {
+                link.href = '../static/css/styles.css';
+            } else {
+                link.href = 'css/styles.css';
+            }
+            // Append link element to HTML head 
+            head.appendChild(link);
+        </script>
 
         <!--Scripts--> 
         <script>
             delete module.exports;
         </script>
         <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-        <script src="../../js/window.js"></script>
         <script src="built/bundle.js"></script>
+
+        <script>
+            var userAgent = navigator.userAgent.toLowerCase();
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            if (userAgent.indexOf(' electron/') > -1) {
+                script.src = '../static/js/window.js';
+            } else {
+                script.src = 'js/window.js';
+            }
+            var head = document.getElementsByTagName('HEAD')[0];
+            head.appendChild(script);
+        </script>
     </head>
 
     <body>
