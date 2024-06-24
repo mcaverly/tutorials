@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8"/>
+
+        <title>Current Prices</title>
+
+        <!--Stylesheets--> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+        <script>
+            // Get HTML head element 
+            var head = document.getElementsByTagName('HEAD')[0];
+
+            // Create new link Element 
+            var link = document.createElement('link');
+
+            // set the attributes for link element  
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+
+            // Load CSS based on deployment
+            var userAgent = navigator.userAgent.toLowerCase();
+            if (userAgent.indexOf(' electron/') > -1) {
+                link.href = '../static/css/styles.css';
+            } else {
+                link.href = 'css/styles.css';
+            }
+            // Append link element to HTML head 
+            head.appendChild(link);
+        </script>
+
+        <!--Scripts--> 
+        <script>
+            delete module.exports;
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="built/bundle.js"></script>
+
+        <script>
+            var userAgent = navigator.userAgent.toLowerCase();
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            if (userAgent.indexOf(' electron/') > -1) {
+                script.src = '../static/js/window.js';
+            } else {
+                script.src = 'js/window.js';
+            }
+            var head = document.getElementsByTagName('HEAD')[0];
+            head.appendChild(script);
+        </script>
+    </head>
+
+    <body>
+        <div id="container" class="container-fluid">
+
+            Oil Row 
+            <div class="row oil">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                    <h1>Oil <small>per barrel</small></h1>
+                    <h2>
+                        <span id="oil-price" class="price"></span>
+                        <small id="oil-change" class="change"></small>
+                    </h2>
+                </div>
+            </div>
+
+            Gold Row 
+            <div class="row gold">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h1>Gold <small>per ounce</small></h1>
+                    <h2>
+                        <span id="gold-price" class="price"></span>
+                        <small id="gold-change" class="change"></small>
+                    </h2>
+                </div>
+            </div>
+
+            Silver Row 
+            <div class="row silver">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h1 class="silver">Silver <small>per ounce</small></h1>
+                    <h2>
+                        <span id="silver-price" class="price"></span>
+                        <small id="silver-change" class="change"></small>
+                    </h2>
+                </div>
+            </div>
+
+        </div>
+    </body>
+
+</html>
